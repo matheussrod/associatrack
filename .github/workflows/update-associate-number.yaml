@@ -15,6 +15,6 @@ run:
           R -e 'renv::restore()'
       - name: Update associates data
         env: 
-          ASSOCITRACK_PASSWORD: ${{ secrets.ASSOCITRACK_PASSWORD }} 
+          ASSOCITRACK_PASSWORD: ${{ secrets.ASSOCIATRACK_PASSWORD }} 
         run:
           R -e 'renv::run("R/get_associate_number.R")'
