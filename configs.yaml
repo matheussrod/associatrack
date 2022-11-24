@@ -1,0 +1,9 @@
+fortaleza:
+  name: 'Fortaleza'
+  url: 'https://www.sociofortaleza.com.br'
+  xpath: '//*[@id="header"]/div/div/div/div[2]/div/div/div/nav/div/div[1]/span/strong'
+
+ceara:
+  name: 'Ceara'
+  url: 'https://sociovozao.com/'
+  xpath: '//*[@id="wrapper"]/section/div/div[6]/div[1]/span/strong'
