@@ -1,0 +1,20 @@
+name: "Update-associate-number"
+on:
+  schedule:
+    - cron: "0 0 * * *"
+run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup R
+        uses: r-lib/actions/setup-r@master
+        
+      - name: Setup dependencies
+        run: |
+          R -e 'install.packages("renv")' 
+          R -e 'renv::restore()'
+      - name: Update associates data
+        env: 
+          ASSOCITRACK_PASSWORD: ${{ secrets.ASSOCITRACK_PASSWORD }} 
+        run:
+          R -e 'renv::run("R/get_associate_number.R")'
