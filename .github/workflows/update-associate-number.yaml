@@ -2,7 +2,8 @@ name: "Update-associate-number"
 on:
   schedule:
     - cron: "0 0 * * *"
-run:
+jobs:
+  update-associates:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
