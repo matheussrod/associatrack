@@ -31,4 +31,6 @@ create_key <- function(x = NULL) {
   return(key)
 }
 
-create_nonce <- gargle:::secret_nonce
+create_nonce <- function() {
+  sodium::hex2bin("cb36bab652dec6ae9b1827c684a7b6d21d2ea31cd9f766ac")
+}
