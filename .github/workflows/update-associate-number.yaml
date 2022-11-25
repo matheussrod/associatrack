@@ -10,6 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      
+      - name: Install ubuntu dependencies
+        run: sudo apt-get install libcurl4-openssl-dev
+      
       - name: Setup R
         uses: r-lib/actions/setup-r@v2
       
