@@ -1,19 +1,21 @@
 name: "Update-associate-number"
 on:
+  push:
+    branches:
+      - main
   schedule:
-    - cron: "0 0 * * *"
+    - cron: '0 0 * * *'
 jobs:
   update-associates:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Setup R
-        uses: r-lib/actions/setup-r@master
-        
+        uses: r-lib/actions/setup-r@v2
+      
       - name: Setup dependencies
-        run: |
-          R -e 'install.packages("renv")' 
-          R -e 'renv::restore()'
+        uses: r-lib/actions/setup-renv@v2
+        
       - name: Update associates data
         env: 
           ASSOCITRACK_PASSWORD: ${{ secrets.ASSOCIATRACK_PASSWORD }} 
