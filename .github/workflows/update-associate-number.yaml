@@ -1,7 +1,10 @@
 name: "Update-associate-number"
 on:
+  push:
+    branches:
+      - main
   schedule:
-    - cron: "0 0 * * *"
+    - cron: '0 0 * * *'
 jobs:
   update-associates:
     runs-on: ubuntu-latest
