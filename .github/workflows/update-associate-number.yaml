@@ -15,7 +15,7 @@ jobs:
         
       - name: Setup dependencies
         run: |
-          R -e 'install.packages("renv")' 
+          R -e 'install.packages(c("renv", "gargle"))'
           R -e 'renv::restore()'
       - name: Update associates data
         env: 
